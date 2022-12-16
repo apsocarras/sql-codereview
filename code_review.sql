@@ -58,5 +58,21 @@ LIMIT 20;
 
 --   * Using GROUP BY, show the average number of parts for each theme_id in sets.
 
+SELECT is_trans, COUNT(1) AS num_colors FROM colors
+GROUP BY is_trans;
+
+SELECT SUM(num_parts) AS total_parts 
+FROM sets 
+WHERE year >= 2000;
+
+SELECT AVG(num_parts) AS avg_parts 
+FROM sets 
+WHERE year >= 2000;
+
+SELECT theme_id, AVG(num_parts) AS avg_parts 
+FROM sets 
+GROUP BY theme_id;
+
 -- **Joins** 
 --   * Using a free-form join (where the JOIN type isn't specified, equivalent to an inner join), join the parts and part_categories tables. Filter for values where the part_categories id matches the parts part_cat_id, and where the name of the part contains the word 'Werewolf'.
+
