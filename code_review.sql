@@ -76,3 +76,8 @@ GROUP BY theme_id;
 -- **Joins** 
 --   * Using a free-form join (where the JOIN type isn't specified, equivalent to an inner join), join the parts and part_categories tables. Filter for values where the part_categories id matches the parts part_cat_id, and where the name of the part contains the word 'Werewolf'.
 
+SELECT *
+FROM parts
+JOIN part_categories 
+ON parts.part_cat_id = part_categories.id
+WHERE parts.name LIKE "%Werewolf%"; 
