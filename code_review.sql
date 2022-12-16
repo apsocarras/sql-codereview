@@ -5,6 +5,19 @@
 
 --   * Aliasing the part_categories table as p, show the id and name of the values in that table where the name includes the word 'Bricks'
   
+SELECT name, num_parts
+FROM sets
+WHERE name LIKE "%Hair%"
+ORDER BY num_parts DESC;
+
+SELECT name
+FROM sets
+WHERE name LIKE "%Showdown%" AND year BETWEEN 1990 AND 2015;
+
+SELECT id, name 
+FROM part_categories AS p
+WHERE name LIKE "%Bricks%";
+
 -- **Subqueries**
 --   * Select all the ids from the themes table with 'Pirates' or 'Star Wars' in the name. This is your subquery. Then show the names of all the sets where the theme_id matches an id in that subquery.
 
